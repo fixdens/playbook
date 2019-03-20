@@ -1,0 +1,51 @@
+---
+- name: zsh + lsd
+  hosts: ec2
+  become: true
+
+  tasks:
+  - name: install zsh
+    apt: name=zsh state=latest
+    when: ansible_os_family == "Debian"
+
+  - name: install git
+    apt: name=git-core state=latest
+    when: ansible_os_family == "Debian"
+
+  - name: install util_linux
+    yum: name=util-linux-user state=latest
+    when: ansible_os_family == "RedHat"
+
+
+  - name: install git
+    yum: name=git-core state=latest
+    when: ansible_os_family == "RedHat"
+
+  - name: install wget
+    yum: name=wget state=latest
+    when: ansible_os_family == "RedHat"
+
+  - name: install zsh
+    yum: name=zsh state=latest
+    when: ansible_os_family == "RedHat"
+
+
+  - name: install ZSH robbyrussel
+    shell: sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+
+  - name: Copy LSD
+    copy:
+     src: /home/dens/Ansible/lsd
+     dest: /usr/bin/
+     mode: 0755
+
+  - lineinfile:
+      path: ~/.zshrc
+      regexp: '^ZSH_THEME='
+      line: 'ZSH_THEME="agnoster"'
+
+
+  - lineinfile:
+      path: ~/.zshrc
+      line: 'alias ls="lsd"'
