@@ -1,6 +1,6 @@
 ---
 - name: zsh + lsd
-  hosts: ec2
+  hosts: Proxmox guest
   become: true
 
   tasks:
