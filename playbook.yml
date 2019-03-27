@@ -1,7 +1,7 @@
 ---
 - name: zsh + lsd
   hosts: AWX
-  become: true
+
 
   tasks:
   - name: install zsh
