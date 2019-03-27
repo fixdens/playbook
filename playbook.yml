@@ -1,5 +1,6 @@
 ---
 - name: zsh + lsd
+  hosts: Proxmox
   become: true
 
   tasks:
