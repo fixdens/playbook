@@ -1,6 +1,5 @@
 ---
 - name: zsh + lsd
-  hosts: Proxmox guest
   become: true
 
   tasks:
