@@ -1,6 +1,6 @@
 ---
 - name: zsh + lsd
-  hosts: Proxmox
+  hosts: proxmox_s
   become: true
 
   tasks:
