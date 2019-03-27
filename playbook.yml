@@ -1,6 +1,6 @@
 ---
 - name: zsh + lsd
-  hosts: proxmox_s
+  hosts: AWX
   become: true
 
   tasks:
