@@ -1,6 +1,6 @@
 ---
 - name: zsh + lsd
-  hosts: AWX
+  hosts: DensTEST3
   become: yes
   tasks:
   - name: install zsh
