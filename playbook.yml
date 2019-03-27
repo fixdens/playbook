@@ -1,8 +1,7 @@
 ---
 - name: zsh + lsd
   hosts: AWX
-  become: true
-
+  become: yes
   tasks:
   - name: install zsh
     apt: name=zsh state=latest
